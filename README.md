@@ -14,7 +14,7 @@ A modern, responsive portfolio website showcasing video editing skills and servi
 
 ## 🚀 Live Demo
 
-[View Live Portfolio](https://your-username.github.io/video-editor-portfolio) *(Update with your GitHub Pages URL)*
+[View Live Portfolio](https://faranmalik-gameino.github.io/videoEditingPortfolio)
 
 ## 🛠️ Technologies Used
 
@@ -59,8 +59,8 @@ video-editor-portfolio/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/YOUR-USERNAME/video-editor-portfolio.git
-   cd video-editor-portfolio
+   git clone https://github.com/faranmalik-gameino/videoEditingPortfolio.git
+   cd videoEditingPortfolio
    ```
 
 2. **Open in browser**
