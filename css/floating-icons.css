@@ -1,0 +1,326 @@
+/* ==========================================
+   3D FLOATING SOFTWARE ICONS (SUBTLE VERSION)
+   ========================================== */
+
+/* Base floating icon styles */
+.floating-icon {
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    will-change: transform;
+}
+
+/* Icon images */
+.floating-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 20%;
+}
+
+/* Text icons (Pr/Ae) */
+.floating-icon.icon-text {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.8);
+    /* Slightly transparent text */
+    text-shadow: 0 0 15px rgba(124, 58, 237, 0.3);
+    /* Reduced glow */
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.4) 0%, rgba(79, 70, 229, 0.4) 100%);
+    /* More transparent bg */
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(2px);
+}
+
+/* ==========================================
+   DEPTH LAYERS (SUBTLE OPACITY & BLUR)
+   ========================================== */
+
+/* FAR LAYER - Background (Small, Heavily Blurred, Very Faint) */
+.floating-icon.icon-far {
+    width: 40px;
+    height: 40px;
+    opacity: 0.06;
+    /* Very subtle */
+    filter: blur(4px);
+    z-index: 0;
+}
+
+.floating-icon.icon-far.icon-text {
+    font-size: 18px;
+    opacity: 0.08;
+}
+
+/* MID LAYER - Midground (Medium, Moderate Blur, Faint) */
+.floating-icon.icon-mid {
+    width: 65px;
+    height: 65px;
+    opacity: 0.12;
+    /* Subtle but visible */
+    filter: blur(2px);
+    z-index: 1;
+}
+
+.floating-icon.icon-mid.icon-text {
+    font-size: 28px;
+    opacity: 0.15;
+}
+
+/* NEAR LAYER - Foreground (Large, Slight Blur, Visible) */
+.floating-icon.icon-near {
+    width: 85px;
+    height: 85px;
+    opacity: 0.2;
+    /* Still subtle, not fully opaque */
+    filter: blur(0.5px);
+    /* Slight softness to blend */
+    z-index: 2;
+}
+
+.floating-icon.icon-near.icon-text {
+    font-size: 36px;
+    opacity: 0.25;
+}
+
+/* ==========================================
+   POSITIONING & ANIMATIONS
+   ========================================== */
+
+/* FAR LAYER POSITIONS */
+.icon-1 {
+    top: 10%;
+    left: 5%;
+    animation: floatSlow1 35s infinite ease-in-out;
+}
+
+.icon-2 {
+    top: 70%;
+    left: 12%;
+    animation: floatSlow2 38s infinite ease-in-out;
+}
+
+.icon-3 {
+    top: 25%;
+    right: 8%;
+    animation: floatSlow3 36s infinite ease-in-out;
+}
+
+.icon-4 {
+    bottom: 35%;
+    right: 18%;
+    animation: floatSlow1 40s infinite ease-in-out reverse;
+}
+
+.icon-5 {
+    bottom: 15%;
+    left: 25%;
+    animation: floatSlow2 34s infinite ease-in-out;
+}
+
+.icon-6 {
+    top: 45%;
+    right: 4%;
+    animation: floatSlow3 37s infinite ease-in-out reverse;
+}
+
+/* MID LAYER POSITIONS */
+.icon-7 {
+    top: 20%;
+    left: 15%;
+    animation: floatMedium1 30s infinite ease-in-out;
+}
+
+.icon-8 {
+    top: 55%;
+    left: 8%;
+    animation: floatMedium2 32s infinite ease-in-out;
+}
+
+.icon-9 {
+    top: 35%;
+    right: 20%;
+    animation: floatMedium3 31s infinite ease-in-out;
+}
+
+.icon-10 {
+    bottom: 25%;
+    right: 10%;
+    animation: floatMedium1 33s infinite ease-in-out reverse;
+}
+
+.icon-11 {
+    bottom: 50%;
+    left: 20%;
+    animation: floatMedium2 29s infinite ease-in-out;
+}
+
+.icon-12 {
+    top: 5%;
+    right: 25%;
+    animation: floatMedium3 34s infinite ease-in-out reverse;
+}
+
+/* NEAR LAYER POSITIONS */
+.icon-13 {
+    top: 15%;
+    left: 35%;
+    animation: floatFast1 25s infinite ease-in-out;
+}
+
+.icon-14 {
+    top: 60%;
+    left: 45%;
+    animation: floatFast2 27s infinite ease-in-out;
+}
+
+.icon-15 {
+    top: 40%;
+    right: 30%;
+    animation: floatFast3 26s infinite ease-in-out;
+}
+
+.icon-16 {
+    bottom: 30%;
+    right: 40%;
+    animation: floatFast1 28s infinite ease-in-out reverse;
+}
+
+.icon-17 {
+    bottom: 10%;
+    left: 50%;
+    animation: floatFast2 24s infinite ease-in-out;
+}
+
+.icon-18 {
+    top: 8%;
+    right: 15%;
+    animation: floatFast3 29s infinite ease-in-out reverse;
+}
+
+/* ==========================================
+  FLOATING ANIMATIONS (Slower for subtlety)
+   ========================================== */
+
+@keyframes floatSlow1 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(20px, 30px) rotate(5deg);
+    }
+}
+
+@keyframes floatSlow2 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: translate(-20px, 25px) rotate(-4deg) scale(1.05);
+    }
+}
+
+@keyframes floatSlow3 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(-25px, -20px) scale(1.1);
+    }
+}
+
+@keyframes floatMedium1 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(30px, 20px) rotate(6deg);
+    }
+}
+
+@keyframes floatMedium2 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(25px, -20px) scale(1.05) rotate(4deg);
+    }
+}
+
+@keyframes floatMedium3 {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(20px, -25px);
+    }
+}
+
+@keyframes floatFast1 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(35px, 15px) rotate(8deg);
+    }
+}
+
+@keyframes floatFast2 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(-30px, 25px) scale(1.05) rotate(-6deg);
+    }
+}
+
+@keyframes floatFast3 {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-35px, -20px);
+    }
+}
+
+/* ==========================================
+   RESPONSIVE - Hide on mobile
+   ========================================== */
+
+@media (max-width: 768px) {
+    .floating-icon {
+        display: none;
+    }
+}
