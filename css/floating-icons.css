@@ -38,6 +38,26 @@
     backdrop-filter: blur(2px);
 }
 
+/* Adobe Premiere Pro Style */
+.floating-icon.type-pr {
+    background: #00005c;
+    /* Dark Blue/Purple */
+    color: #d29bfd;
+    /* Light Purple */
+    border: 1px solid rgba(210, 155, 253, 0.3);
+    box-shadow: 0 0 15px rgba(210, 155, 253, 0.2);
+}
+
+/* Adobe After Effects Style */
+.floating-icon.type-ae {
+    background: #00005c;
+    /* Dark Blue/Purple */
+    color: #9999ff;
+    /* Light Blue/Purple */
+    border: 1px solid rgba(153, 153, 255, 0.3);
+    box-shadow: 0 0 15px rgba(153, 153, 255, 0.2);
+}
+
 /* ==========================================
    DEPTH LAYERS (SUBTLE OPACITY & BLUR)
    ========================================== */
@@ -46,38 +66,38 @@
 .floating-icon.icon-far {
     width: 40px;
     height: 40px;
-    opacity: 0.06;
-    /* Very subtle */
+    opacity: 0.04;
+    /* Reduced from 0.15 */
     filter: blur(4px);
     z-index: 0;
 }
 
 .floating-icon.icon-far.icon-text {
     font-size: 18px;
-    opacity: 0.08;
+    opacity: 0.05;
 }
 
 /* MID LAYER - Midground (Medium, Moderate Blur, Faint) */
 .floating-icon.icon-mid {
     width: 65px;
     height: 65px;
-    opacity: 0.12;
-    /* Subtle but visible */
+    opacity: 0.08;
+    /* Reduced from 0.25 */
     filter: blur(2px);
     z-index: 1;
 }
 
 .floating-icon.icon-mid.icon-text {
     font-size: 28px;
-    opacity: 0.15;
+    opacity: 0.1;
 }
 
 /* NEAR LAYER - Foreground (Large, Slight Blur, Visible) */
 .floating-icon.icon-near {
     width: 85px;
     height: 85px;
-    opacity: 0.2;
-    /* Still subtle, not fully opaque */
+    opacity: 0.12;
+    /* Reduced from 0.4 */
     filter: blur(0.5px);
     /* Slight softness to blend */
     z-index: 2;
@@ -85,7 +105,7 @@
 
 .floating-icon.icon-near.icon-text {
     font-size: 36px;
-    opacity: 0.25;
+    opacity: 0.15;
 }
 
 /* ==========================================
