@@ -306,15 +306,34 @@ document.addEventListener('DOMContentLoaded', function () {
     const playButtons = document.querySelectorAll('.play-btn');
 
     // Open modal when play button is clicked
-    playButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            const videoUrl = this.getAttribute('data-video');
-            if (videoUrl) {
-                videoFrame.src = videoUrl + '?autoplay=1';
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    // Open modal when play button is clicked (Event Delegation)
+    // Open modal when play button or overlay is clicked (Event Delegation)
+    // Open modal when any part of the video card is clicked (Event Delegation)
+    document.addEventListener('click', function (e) {
+        // Broaden target to the entire video item card
+        const card = e.target.closest('.video-item');
+
+        if (card) {
+            e.preventDefault();
+            // Find the button (or just the data) within the card
+            const button = card.querySelector('.play-btn');
+
+            if (button) {
+                const videoUrl = button.getAttribute('data-video');
+                if (videoUrl) {
+                    // Strip existing parameters to ensure clean state
+                    let cleanUrl = videoUrl.split('?')[0];
+
+                    // Standardize on normal youtube domain
+                    cleanUrl = cleanUrl.replace('youtube-nocookie.com', 'youtube.com');
+
+                    // Add autoplay and mute only - simplest config
+                    videoFrame.src = `${cleanUrl}?autoplay=1&mute=1`;
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                }
             }
-        });
+        }
     });
 
     // Close modal
