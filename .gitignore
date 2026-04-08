@@ -54,6 +54,10 @@ config/local.*
 *.webm
 *.m4v
 
+# Portfolio videos (tracked)
+!assets/vid/
+!assets/vid/*.mp4
+
 # Large image files
 *.psd
 *.ai
