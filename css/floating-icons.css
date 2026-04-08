@@ -344,3 +344,9 @@
         display: none;
     }
 }
+
+@media (prefers-reduced-motion: reduce) {
+    .floating-icon {
+        animation: none !important;
+    }
+}
